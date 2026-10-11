@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility Issue Tracker</title>
+  <meta name="description" content="Findings from the india.gov.in accessibility audit, served by the project's API.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <h1>Accessibility Issue Tracker</h1>
+    <p>Findings from the audit of <a href="https://www.india.gov.in/directory">india.gov.in/directory</a></p>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Filter</h2>
+      <label for="severity">Severity</label>
+      <select id="severity">
+        <option value="">All</option>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+    </section>
+
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Issues</h2>
+      <p id="status" role="status" aria-live="polite">Loading issues…</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-labelledby="results-heading">
+        <table id="issues-table" hidden>
+          <caption class="visually-hidden">Accessibility issues found, with severity and recommended fix</caption>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Component</th>
+              <th scope="col">WCAG</th>
+              <th scope="col">Severity</th>
+              <th scope="col">Recommended fix</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>Audit baseline project · client talks to the API only over HTTP.</p></footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "a11y-audit-foundation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Accessibility baseline audit of india.gov.in plus a monorepo-style full-stack foundation",
+  "type": "module",
+  "workspaces": ["client", "server"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start:server": "npm run start --workspace server",
+    "start:client": "npm run start --workspace client",
+    "test": "node scripts/run-tests.mjs"
+  }
+}
